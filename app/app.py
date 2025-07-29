@@ -1,18 +1,20 @@
 from flask import Flask, render_template, request, redirect, url_for
+
 app = Flask(__name__) 
 
 @app.route('/')
 def home():
-    return "Welcome to the Flask App!"
+    return render_template('index.html')
 
 @app.route('/login')
 def login():
-    return "This is the Login page."
+    return render_template('login.html')
 
-# Corregir error (No encuentra el archivo a renderizar)
+# Agregar metodo POST
 @app.route('/register')
 def register():
-    render_template('/app/pages/Register/index.html')
+    return render_template('register.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -20,4 +22,3 @@ def page_not_found(e):
 
 if __name__ == "__main__":
     app.run(debug=True)
-    print("Flask app is running...")
