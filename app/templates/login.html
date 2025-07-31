@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="../static/login/login.css">
 </head>
 <body>
     <h1>Iniciar sesión</h1>
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
     <form method="POST">
         <label for="username">Usuario:</label><br>
         <input type="text" id="username" name="username"><br><br>
