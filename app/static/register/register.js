@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       alert("Registro exitoso.");
       form.submit();
+      window.location.href = "user/${username}";
     }
   });
 });
