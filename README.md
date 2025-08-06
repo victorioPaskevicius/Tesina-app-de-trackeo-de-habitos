@@ -1,7 +1,4 @@
 # Tesina Habit Tracker App
-
-## Español
-
 ### Ejecución de la aplicación
 
 1. **Instalar dependencias**  
@@ -66,3 +63,4 @@
 - **Temporizador simple para hábitos.**
 
 ---
+
