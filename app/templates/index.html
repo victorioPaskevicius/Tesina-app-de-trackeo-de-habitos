@@ -4,10 +4,72 @@
     <meta charset="UTF-8" />
     <title>Inicio</title>
     <link rel="stylesheet" href="../static/index.css" />
+    <link rel="stylesheet" href="../static/index/index.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
   </head>
   <body>
-    <h1>¡Bienvenido al sistema!</h1>
-    <p>Has iniciado sesión correctamente.</p>
-    <a href="/login">Cerrar sesión</a>
+    <header>
+      <div class="logo">
+        <a href="./index.html"><img src="../public/images/Logo" alt="logo" /></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li class="li_nav"><a href="./login.html">Login</a></li>
+          <li class="li_nav"><a href="./register.html">Register</a></li>
+          <li class="li_nav"><a href="./about.html">Sobre nosotros</a></li>
+          <li class="li_nav"><a href="./contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="perfil">
+        <img src="../public/images/person-svgrepo-com.svg" alt="logo-perfil" />
+      </div>
+    </header>
+
+    <h1>Bienvenido a <span class="name_app_span">Habit Tracker</span></h1>
+    <article>
+      <h2>Habitos</h2>
+      <div class="container_habit">
+        <p class="Temporizador">00:00</p>
+        <!-- Temporizador -->
+        <h3>Nombre del habito</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit libero
+          harum amet quo cupiditate unde animi quibusdam, fugit non dolorem!
+        </p>
+        <div class="buttons">
+          <button id="btn_completed" class="btn_habit">Completado</button>
+          <div class="">
+            <button id="btn_edit" class="btn_habit">Editar</button>
+            <button id="btn_delete" class="btn_habit">Eliminar</button>
+          </div>
+        </div>
+      </div>
+      <div class="container_habit">
+        <p class="Temporizador">00:00</p>
+        <!-- Temporizador -->
+        <h3>Nombre del habito</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit libero
+          harum amet quo cupiditate unde animi quibusdam, fugit non dolorem!
+        </p>
+        <div class="buttons">
+          <button id="btn_completed" class="btn_habit">Completado</button>
+          <div class="">
+            <button id="btn_edit" class="btn_habit">Editar</button>
+            <button id="btn_delete" class="btn_habit">Eliminar</button>
+          </div>
+        </div>
+      </div>
+      <button class="create_habit_btn">Nuevo habito</button>
+    </article>
+     <h1>Listado de Usuarios</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }} - {{ user.email }}</li>
+        {% endfor %}
+    </ul>
+    <footer>Footer</footer>
+    <script src="../static/index.js"></script>
+    <script src="../static/index/index.js"></script>
   </body>
 </html>

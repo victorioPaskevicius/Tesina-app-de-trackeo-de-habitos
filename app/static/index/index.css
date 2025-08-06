@@ -1,0 +1,79 @@
+.name_app_span {
+    text-shadow: 10px 10px 5px;
+}
+
+article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.container_habit{
+    width: 80dvw;
+    border: 1px solid black;
+    padding: 20px 200px;
+    text-align: center;
+
+    background-color: #005a9b;
+    color: #ccc;
+}
+.Temporizador {
+    text-align: left;
+    font-size: 20px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* Boton de marcar habito como completada */
+#btn_completed {
+    background-color: #ccc;
+}
+#btn_completed:hover {
+    background-color: #0077cc;
+    cursor: pointer;
+
+}
+#btn_completed:active {
+    background-color: #005a9b;
+}
+
+/* Boton de editar habito */
+#btn_edit {
+    background-color: #ccc;
+}
+#btn_edit:hover {
+    background-color: #ffc400;
+    cursor: pointer;
+
+}
+#btn_edit:active {
+    background-color: #ff8800;
+}
+
+/* Boton de eliminar habito */
+#btn_delete {
+    background-color: rgb(164, 59, 59);
+}
+#btn_delete:hover {
+    background-color: rgb(220, 43, 43);
+    cursor: pointer;
+
+}
+#btn_delete:active {
+    background-color: #b70000;
+}
+
+.create_habit_btn {
+    background-color: rgb(8, 180, 80);
+    cursor: pointer;
+}
+.create_habit_btn:hover {
+    background-color: rgb(6, 146, 64);
+}
+.create_habit_btn:active {
+    background-color: rgb(5, 110, 49);
+}
