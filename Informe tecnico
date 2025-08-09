@@ -1,0 +1,46 @@
+# Cómo hicimos Habit-TRAKET
+
+## Índice
+
+1. Un poco de contexto
+2. Pensando la app (Planificación)
+3. Diseño: ¿Cómo se ve y cómo funciona?
+4. Manos a la obra: Programando la app
+5. Problemas y cómo los sorteamos
+6. Cierre y aprendizajes
+
+
+## 1. Un poco de contexto
+
+Esta es la historia de cómo desarrollamos la aplicación para trackear hábitos. La idea era tener una herramienta simple, que cualquiera pudiera usar para llevar el control de sus rutinas diarias, ver el progreso y motivarse a cumplir objetivos personales. No queríamos reinventar la rueda, sino hacer algo útil, práctico y, sobre todo, fácil de usar.
+
+## 2. Planificación
+
+Antes de escribir una sola línea de código, nos juntamos a charlar sobre qué queríamos lograr. Buscamos algunas apps parecidas, hicimos una lista de lo que nos gustaba y lo que no, y armamos una especie de “wishlist” de funciones.
+
+Lo que sí o sí tenía que tener:
+- Que cada usuario pueda crearse una cuenta.
+- Poder agregar, editar y borrar hábitos.
+- Mostrar el progreso de forma clara (por día, semana y mes).
+- Notificaciones/recordatorios para no colgarse.
+- Que la app se vea bien en distintos dispositivos.
+- Que los datos estén seguros y no se pierdan.
+
+No nos volvimos locos con cosas raras: preferimos empezar simple y después, si daba, agregar más.
+
+
+## 3. Diseño: ¿Cómo se ve y cómo funciona?
+
+Acá vino la parte de los bocetos, los “wireframes” y las peleas por los colores. Al final, el objetivo fue que la app tenga una onda minimalista, nada de cosas innecesarias. Queríamos que, al abrirla, enseguida sepas qué hacer: ver tus hábitos, marcar los que cumpliste, y listo.
+
+La estructura del proyecto la armamos más o menos así:
+- `/src`: Todo el código fuente.
+  - `/components`: Cosas visuales que se repiten (botones, tarjetas, etc).
+  - `/screens`: Las pantallas principales (Inicio, Estadísticas, Configuración…).
+  - `/services`: Acá va la lógica para hablar con la base de datos o la API.
+  - `/utils`: Funciones útiles que usamos en varios lados.
+  - `/assets`: Imágenes, íconos y demás.
+
+¿Por qué así? Porque nos pareció más ordenado, y si después sumamos más cosas, no se vuelve un lío.
+
+La interfaz la pensamos con pocos colores y tipografía grande. El menú está siempre a mano, así podés saltar entre secciones sin perderte. Y sumamos unas animaciones suaves para que usar la app sea más agradable.
