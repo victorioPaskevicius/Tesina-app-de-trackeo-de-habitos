@@ -24,7 +24,7 @@ def get_data():
     try:
         connection = get_connection()
         with connection.cursor() as cur:
-            cur.execute("SELECT * FROM users WHERE id = 2")
+            cur.execute("SELECT * FROM users")
             data = cur.fetchall()
         connection.close()
         return jsonify(data)
