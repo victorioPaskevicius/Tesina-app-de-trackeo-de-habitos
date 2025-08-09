@@ -1,25 +1,11 @@
-import mysql.connector
-from .connection import get_connection
+import pymysql
 
-def get_db_connection():
-    connection = mysql.connector.connect(
+def get_connection():
+    return pymysql.connect(
         host='localhost',
+        port=3307,
         user='root',
         password='',
-        database='habit_tracker'
+        database='habit_tracker',
+        # cursorclass=pymysql.cursors.DictCursor
     )
-    return connection
-
-
-def get_all_users():
-    connection = get_connection()
-    cursor = connection.cursor(dictionary=True)
-
-    cursor.execute("SELECT * FROM users")
-    users = cursor.fetchall()
-
-    cursor.close()
-    connection.close()
-
-    return users
-

@@ -1,23 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("registerForm");
+  const form = document.getElementById("loginForm");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const username = document.getElementById("inputName").value.trim();
     const email = document.getElementById("inputMail").value.trim();
     const password = document.getElementById("inputPass").value;
-    const rePassword = document.getElementById("inputRePass").value;
     const errorContainer = document.getElementById("errorContainer");
 
     let isValid = true;
     let messages = [];
-
-    // Validar nombre
-    if (username.length < 3) {
-      isValid = false;
-      messages.push("El nombre debe tener al menos 3 caracteres.");
-    }
 
     // Validar email con expresión regular
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,12 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
       messages.push("La contraseña debe tener al menos 6 caracteres.");
     }
 
-    // Confirmar contraseña
-    if (password !== rePassword) {
-      isValid = false;
-      messages.push("Las contraseñas no coinciden.", "\n");
-    }
-
     if (!isValid) {
       alert(messages.join("\n"));
       const textError = document.createElement("p");
@@ -45,11 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
       textError.classList.add("error");
       errorContainer.appendChild(textError);
     } else {
-      fetch("/register", {
+      fetch("/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username: username,
           email: email,
           password: password,
         }),
@@ -57,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.message) {
-            alert(data.message);
             window.location.href = `user/${data.user_id}`;
           } else {
             alert("Error: " + data.error);
