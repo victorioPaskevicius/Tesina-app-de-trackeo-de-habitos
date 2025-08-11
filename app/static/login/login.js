@@ -25,11 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!isValid) {
-      alert(messages.join("\n"));
-      const textError = document.createElement("p");
-      textError.textContent = `${messages.join("\n")}`;
-      textError.classList.add("error");
-      errorContainer.appendChild(textError);
+      errorContainer.innerHTML = "";
+      messages.forEach((message) => {
+        const textError = document.createElement("p");
+        textError.textContent = message;
+        textError.classList.add("error","fs-5")
+        errorContainer.appendChild(textError)
+      });
     } else {
       fetch("/login", {
         method: "POST",

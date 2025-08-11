@@ -35,15 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Confirmar contraseña
     if (password !== rePassword) {
       isValid = false;
-      messages.push("Las contraseñas no coinciden.", "\n");
+      messages.push("Las contraseñas no coinciden.");
     }
 
     if (!isValid) {
-      alert(messages.join("\n"));
-      const textError = document.createElement("p");
-      textError.textContent = `${messages.join("\n")}`;
-      textError.classList.add("error");
-      errorContainer.appendChild(textError);
+      errorContainer.innerHTML = "";
+      messages.forEach((message) => {
+        const textError = document.createElement("p");
+        textError.textContent = message;
+        textError.classList.add("error","fs-5")
+        errorContainer.appendChild(textError)
+      });
     } else {
       fetch("/register", {
         method: "POST",
