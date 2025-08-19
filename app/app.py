@@ -31,9 +31,8 @@ def get_data():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-@app.route('/user/<int:user_id>')
-@cross_origin()
-def home(user_id):
+@app.route('/')
+def index():
     return render_template('index.html')
 
 @app.route('/login',methods=['GET','POST'])
@@ -100,14 +99,18 @@ def register():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/user/<int:user_id>')
+@cross_origin()
+def home(user_id):
+    return render_template('home.html')
 
 # @app.route('/perfil')
 # def perfil():
 #     return "<h1>Este es tu perfil</h1>"
 
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     return "Page not found!", 404
+@app.errorhandler(404)
+def page_not_found(e):
+    return "Page not found!", 404
 
 if __name__ == "__main__":
     app.run(debug=True)

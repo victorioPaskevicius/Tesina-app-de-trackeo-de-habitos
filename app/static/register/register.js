@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let messages = [];
 
     // Validar nombre
-    if (username.length < 3) {
+    if (username.length < 3 || username.length > 20) {
       isValid = false;
-      messages.push("El nombre debe tener al menos 3 caracteres.");
+      messages.push("El nombre debe tener entre 3 y 20 caracteres");
     }
 
     // Validar email con expresión regular
@@ -60,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((data) => {
           if (data.message) {
             alert(data.message);
-            window.location.href = `user/${data.user_id}`;
+            // window.location.href = `user/${data.user_id}`;
+
           } else {
             alert("Error: " + data.error);
           }
