@@ -5,7 +5,9 @@
 .img_section_filosofia {
   height: 200px;
 }
-
+.img_section_steps{
+  height: 50px;
+}
 .funciona {
   width: 50dvw;
 }
