@@ -4,80 +4,255 @@
     <meta charset="UTF-8" />
     <title>Inicio</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="{{ url_for('static', filename='index.css') }}"
     />
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='index/index.css')}}"
+      href="{{url_for('static', filename='home/home.css')}}"
     />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
   </head>
+
   <body>
-    <header>
-      <!-- <div class="logo">
-        <a href="./index.html"
-          ><img src="../public/images/Logo" alt="logo"
-        /></a>
-      </div> -->
-      <nav class="nav">
-        <ul>
-          <li class="li_nav"><a href="./login.html">Login</a></li>
-          <li class="li_nav"><a href="./register.html">Register</a></li>
-          <li class="li_nav"><a href="./about.html">Sobre nosotros</a></li>
-          <li class="li_nav"><a href="./contact.html">Contacto</a></li>
-        </ul>
-      </nav>
-      <!-- <div class="perfil">
-        <img src="../public/images/person-svgrepo-com.svg" alt="logo-perfil" />
-      </div> -->
+    <!-- Header -->
+    <header
+      class="container-fluid d-flex gap-3 align-items-center justify-content-around header p-3 border-bottom bg-dark"
+    >
+      <div class="">
+        <a
+          class="d-flex align-items-center gap-3 link-offset-2 link-underline link-underline-opacity-0"
+          href="/"
+        >
+          <img class="header_img" src="../static/images/Logo.png" alt="" />
+          <p class="fs-4 m-auto text-secondary fw-bold">Habit Tracker</p>
+        </a>
+      </div>
+      <div class="">
+        <p class="m-auto text-success fw-bold fst-italic fs-5">
+          Convierte tus pequeños hábitos en grandes logros
+        </p>
+      </div>
+      <div class="d-flex gap-1">
+        <a
+          class="btn btn-success link-offset-2 link-underline link-underline-opacity-0"
+          href="/register"
+          >Empieza ahora</a
+        >
+        <a
+          class="btn btn-outline-success link-offset-2 link-underline link-underline-opacity-0"
+          href="/login"
+          >Inicia sesion</a
+        >
+      </div>
     </header>
 
-    <h1>Bienvenido a <span class="name_app_span">Habit Tracker</span></h1>
-    <article>
-      <h2>Habitos</h2>
-      <div class="container_habit">
-        <p class="Temporizador">00:00</p>
-        <!-- Temporizador -->
-        <h3>Nombre del habito</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit libero
-          harum amet quo cupiditate unde animi quibusdam, fugit non dolorem!
-        </p>
-        <div class="buttons">
-          <button id="btn_completed" class="btn_habit">Completado</button>
-          <div class="">
-            <button id="btn_edit" class="btn_habit">Editar</button>
-            <button id="btn_delete" class="btn_habit">Eliminar</button>
+    <h1 class="fs-1">
+      Bienvenido a
+      <span class="text-decoration-underline fw-bold">Habit Tracker</span>
+    </h1>
+    <article class="container-sm px-5 d-flex flex-column gap-5 mb-5">
+      <div class="accordion accordion-flush bg-secondary p-1" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Habit 1 example
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Placeholder content for this accordion, which is intended to
+              demonstrate the <code>.accordion-flush</code> class. This is the
+              first item’s accordion body.
+            </div>
+            <hr>
+            <div
+              class="btn-group d-flex gap-5"
+              role="group"
+              aria-label="Basic checkbox toggle button group"
+            >
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck1"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-success" for="btncheck1"
+                >Completado</label
+              >
+
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck2"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-warning" for="btncheck2"
+                >Editar</label
+              >
+
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck3"
+                autocomplete="off"
+              />
+              <label class="btn btn-danger" for="btncheck3">Eliminar</label>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Habit 2 example
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Placeholder content for this accordion, which is intended to
+              demonstrate the <code>.accordion-flush</code> class. This is the
+              second item’s accordion body. Let’s imagine this being filled with
+              some actual content.
+            </div>
+            <hr>
+            <div
+              class="btn-group d-flex gap-5"
+              role="group"
+              aria-label="Basic checkbox toggle button group"
+            >
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck1"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-success" for="btncheck1"
+                >Completado</label
+              >
+
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck2"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-warning" for="btncheck2"
+                >Editar</label
+              >
+
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck3"
+                autocomplete="off"
+              />
+              <label class="btn btn-danger" for="btncheck3">Eliminar</label>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Habit 3 example
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Placeholder content for this accordion, which is intended to
+              demonstrate the <code>.accordion-flush</code> class. This is the
+              third item’s accordion body. Nothing more exciting happening here
+              in terms of content, but just filling up the space to make it
+              look, at least at first glance, a bit more representative of how
+              this would look in a real-world application.
+            </div>
+            <hr>
+            <div
+              class="btn-group d-flex gap-5"
+              role="group"
+              aria-label="Basic checkbox toggle button group"
+            >
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck1"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-success" for="btncheck1"
+                >Completado</label
+              >
+
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck2"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-warning" for="btncheck2"
+                >Editar</label
+              >
+
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="btncheck3"
+                autocomplete="off"
+              />
+              <label class="btn btn-danger" for="btncheck3">Eliminar</label>
+            </div>
           </div>
         </div>
       </div>
-      <div class="container_habit">
-        <p class="Temporizador">00:00</p>
-        <!-- Temporizador -->
-        <h3>Nombre del habito</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit libero
-          harum amet quo cupiditate unde animi quibusdam, fugit non dolorem!
-        </p>
-        <div class="buttons">
-          <button id="btn_completed" class="btn_habit">Completado</button>
-          <div class="">
-            <button id="btn_edit" class="btn_habit">Editar</button>
-            <button id="btn_delete" class="btn_habit">Eliminar</button>
-          </div>
-        </div>
-      </div>
-      <button class="create_habit_btn">Nuevo habito</button>
     </article>
-    <h1>Listado de Usuarios</h1>
-    <ul>
-      {% for user in users %}
-      <li>{{ user.username }} - {{ user.email }}</li>
-      {% endfor %}
-    </ul>
-    <footer>Footer</footer>
+
+    <!-- <h1>Listado de Usuarios</h1>
+  <ul>
+    {% for user in users %}
+    <li>{{ user.username }} - {{ user.email }}</li>
+    {% endfor %}
+  </ul>
+  <footer>Footer</footer> -->
     <script src="{{ url_for('static', filename='index.js') }}"></script>
     <script src="{{ url_for('static', filename='index/index.js') }}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
