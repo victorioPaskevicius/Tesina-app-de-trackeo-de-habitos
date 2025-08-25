@@ -61,6 +61,7 @@
         class="accordion accordion-flush bg-dark p-1"
         id="accordionFlushExample"
       >
+    <!-- Tengo que agregar un boton que se tilde si la tarea esta completado y este en cruz si aun esta pendiente -->
         <div class="accordion-item bg-dark text-light">
           <h2 class="accordion-header">
             <button
@@ -172,6 +173,10 @@
           </div>
         </div>
       </div>
+
+      <div class="container text-center">
+        <button id="btnAddHabit" class="btn btn-success">Agregar nuevo habito</button>
+      </div>
     </article>
 
     <!-- Seccion de estadisticas y graficos -->
@@ -182,8 +187,9 @@
     <footer class="container-fluid bg-dark text-center">
       <h1>Footer</h1>
     </footer>
+
     <script src="{{ url_for('static', filename='index.js') }}"></script>
-    <script src="{{ url_for('static', filename='index/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='home/home.js') }}"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
