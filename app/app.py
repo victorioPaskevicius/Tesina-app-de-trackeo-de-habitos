@@ -103,6 +103,13 @@ def home(user_id):
                                 """,
                                 (habit_id, user_id, cur_date, 0)
                             )
+                            
+                            # Reiniciar el estado general del hábito si se crea un nuevo log
+                            cur.execute(
+                                "UPDATE habits SET is_complete = 0 WHERE id = %s",
+                                (habit_id,)
+                            )
+
                         cur_date += timedelta(days=1)
 
                     # --- 2) Obtener el log de hoy (para mostrar estado actual) ---

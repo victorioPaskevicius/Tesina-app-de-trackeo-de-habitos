@@ -119,3 +119,26 @@ btnEditHabit.forEach((form) => {
       .catch((err) => console.error(err));
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const today = new Date().toISOString().split("T")[0];
+  const habitCards = document.querySelectorAll(".habit-card");
+
+  habitCards.forEach((card) => {
+    const logDate = card.dataset.logDate; // debes tener data-log-date="{{ habit.latest_log.log_date }}"
+    const status = card.dataset.status; // y data-status="{{ habit.latest_log.status }}"
+
+    // Si el log_date no es hoy o status = 0 => mostrar como pendiente
+    if (logDate !== today || status === "0") {
+      card.classList.remove("completed");
+      card.classList.add("pending");
+
+      const btn = card.querySelector(".btn-toggle-complete");
+      if (btn) {
+        btn.textContent = "Marcar como completado";
+        btn.classList.remove("btn-success");
+        btn.classList.add("btn-outline-secondary");
+      }
+    }
+  });
+});

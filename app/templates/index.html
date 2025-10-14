@@ -1,134 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker - Inicio</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for( 'static', filename='index.css' ) }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for( 'static', filename='index/index.css' ) }}"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Habit Tracker - Inicio</title>
-  <link rel="stylesheet" href="/static/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ url_for( 'static', filename='index.css' ) }}" />
-  <link rel="stylesheet" href="{{ url_for( 'static', filename='index/index.css' ) }}" />
-</head>
-
-<body>
-  <!-- Header -->
-  <header
-    class="container-fluid d-flex gap-3 align-items-center justify-content-around header p-3 border-bottom bg-dark">
-    <div class="">
-      <a class="d-flex align-items-center gap-3 link-offset-2 link-underline link-underline-opacity-0" href="/">
-        <img class="header_img" src="../static/images/Logo.png" alt="" />
-        <p class="fs-4 m-auto text-secondary fw-bold">Habit Tracker</p>
-      </a>
-    </div>
-    <div class="">
-      <p class="m-auto text-success fw-bold fst-italic fs-5">
-        Convierte tus pequeños hábitos en grandes logros
-      </p>
-    </div>
-    <div class="d-flex gap-1">
-      <a class="btn btn-success link-offset-2 link-underline link-underline-opacity-0" href="/register">Empieza
-        ahora</a>
-      <a class="btn btn-outline-success link-offset-2 link-underline link-underline-opacity-0" href="/login">Inicia
-        sesion</a>
-    </div>
-  </header>
-
-  <!-- Filosofía -->
-  <section class="p-5 container-sm text-center bg-dark">
-    <h2>Nuestra filosofía</h2>
-    <div class="row align-items-center p-5">
-      <p class="col-8 px-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae praesentium quam, hic aspernatur odio
-        accusantium dolores incidunt omnis, saepe, molestias tempore sed? Tempore tempora repudiandae possimus ullam
-        distinctio harum qui.
-      </p>
-      <img class="img_section_filosofia col" src="../static/images/FilosofiaImg.png" alt="" />
-    </div>
-  </section>
-
-  <!-- Cómo funciona (Hay que poner las imagenes correspondientes)  -->
-  <section class="funciona border container-sm p-5  d-flex flex-column gap-5 text-center">
-    <h2>Empieza a cambiar tu vida en 4 pasos</h2>
-    <ol>
-      <li>Registra tu cuenta en segundos para comenzar a usar la app 👤</li>
-      <li>Define lo que quieres lograr: leer, hacer ejercicio, beber agua... ➕</li>
-      <li>Marca tus hábitos cada día y mantén la constancia. 📅</li>
-      <li>Mira tus logros en gráficos y motívate con tu evolución. 📊</li>
-    </ol>
-    <!-- Carrusel de imagenes con los pasos a seguir -->
-    <!-- Insertar imagenes correspondientes -->
-    <div id="carouselExampleIndicators" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
+  <body>
+    <!-- Header -->
+    <header
+      class="container-fluid d-flex gap-3 align-items-center justify-content-around header p-3 border-bottom bg-dark"
+    >
+      <div class="">
+        <a
+          class="d-flex align-items-center gap-3 link-offset-2 link-underline link-underline-opacity-0"
+          href="/"
+        >
+          <img class="header_img" src="../static/images/Logo.png" alt="" />
+          <p class="fs-4 m-auto text-secondary fw-bold">Habit Tracker</p>
+        </a>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="../static/images/FilosofiaImg.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="../static/images/FilosofiaImg.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="../static/images/FilosofiaImg.png" class="d-block w-100" alt="...">
-        </div>
+      <div class="">
+        <p class="m-auto text-success fw-bold fst-italic fs-5">
+          Convierte tus pequeños hábitos en grandes logros
+        </p>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+      <div class="d-flex gap-1">
+        <a
+          class="btn btn-success link-offset-2 link-underline link-underline-opacity-0"
+          href="/register"
+          >Empieza ahora</a
+        >
+        <a
+          class="btn btn-outline-success link-offset-2 link-underline link-underline-opacity-0"
+          href="/login"
+          >Inicia sesion</a
+        >
+      </div>
+    </header>
 
-    <div class="container">
-      <button class="btn btn-lg btn-success">
-        Crea tu primer habito
-      </button>
-    </div>
-  </section>
+    <!-- Filosofía -->
+    <section class="p-5 container-sm text-center bg-dark">
+      <h2>Nuestra filosofía</h2>
+      <div class="row align-items-center p-5">
+        <p class="col-8 px-5">
+          Los hábitos son pequeñas acciones que repetidas cada día construyen
+          grandes resultados. Te ayudan a mantenerte enfocado, alcanzar tus
+          metas y mejorar tu bienestar. Con constancia y seguimiento, podés
+          transformar tus rutinas en un estilo de vida más equilibrado y
+          productivo.
+        </p>
+        <img
+          class="img_section_filosofia col"
+          src="../static/images/ImgSection1.png"
+          alt=""
+        />
+      </div>
+    </section>
 
+    <!-- Cómo funciona (Hay que poner las imagenes correspondientes)  -->
+    <section
+      class="funciona border container-sm p-5 d-flex flex-column gap-5 text-center"
+    >
+      <h2>Empieza a cambiar tu vida en 4 pasos</h2>
+      <ol>
+        <li>Registra tu cuenta en segundos para comenzar a usar la app 👤</li>
+        <li>
+          Define lo que quieres lograr: leer, hacer ejercicio, beber agua... ➕
+        </li>
+        <li>Marca tus hábitos cada día y mantén la constancia. 📅</li>
+        <li>Mira tus logros en gráficos y motívate con tu evolución. 📊</li>
+      </ol>
+      <!-- Carrusel de imagenes con los pasos a seguir -->
+      <!-- Insertar imagenes correspondientes -->
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../static/images/Img1index.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../static/images/Img2index.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../static/images/Img3index.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
+      <div class="container">
+        <button class="btn btn-lg btn-success">Crea tu primer habito</button>
+      </div>
+    </section>
 
-  <!-- Estudios -->
-  <section class="estudios p-5 container-sm text-center bg-dark">
-    <h2>Motívate viendo tu progreso ✨</h2>
-    <p>
-      Nuestro sistema convierte tus hábitos en estadísticas fáciles de entender. Visualiza tu constancia en gráficos,
-      mantén tus rachas activas y celebra cada pequeño logro. ¡Tus avances te impulsarán a seguir!
-    </p>
-    <p>Establecer rutinas reduce el estrés y mejora la productividad.</p>
-  </section>
+    <!-- Estudios -->
+    <section class="estudios p-5 container-sm text-center bg-dark">
+      <h2>Motívate viendo tu progreso ✨</h2>
+      <p>
+        Nuestro sistema convierte tus hábitos en estadísticas fáciles de
+        entender. Visualiza tu constancia en gráficos, mantén tus rachas activas
+        y celebra cada pequeño logro. ¡Tus avances te impulsarán a seguir!
+      </p>
+      <p>Establecer rutinas reduce el estrés y mejora la productividad.</p>
+    </section>
 
-  <!-- Beneficios -->
-  <section class="beneficios border container-sm p-5">
-    <h2>Beneficios</h2>
-    <ul>
-      <li>✔ Organiza tu día</li>
-      <li>✔ Aumenta tu productividad</li>
-      <li>✔ Mejora tu bienestar</li>
-      <li>✔ Visualiza tu progreso</li>
-    </ul>
-  </section>
+    <!-- Beneficios -->
+    <section class="beneficios border container-sm p-5">
+      <h2>Beneficios</h2>
+      <ul>
+        <li>✔ Organiza tu día</li>
+        <li>✔ Aumenta tu productividad</li>
+        <li>✔ Mejora tu bienestar</li>
+        <li>✔ Visualiza tu progreso</li>
+      </ul>
+    </section>
 
-  <!-- CTA final -->
-  <footer class="cta">
-    <h2>¿Listo para comenzar?</h2>
-    <a href="/register" class="btn btn-success">Crea tu cuenta gratis</a>
-  </footer>
+    <!-- CTA final -->
+    <footer class="cta">
+      <h2>¿Listo para comenzar?</h2>
+      <a href="/register" class="btn btn-success">Crea tu cuenta gratis</a>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
