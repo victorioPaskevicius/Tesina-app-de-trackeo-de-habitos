@@ -10,7 +10,7 @@
     />
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='home/home.css')}}"
+      href="{{ url_for('static', filename='contact/contact.css') }}"
     />
     <link
       rel="stylesheet"
@@ -20,9 +20,7 @@
 
   <body class="bg-light">
     <!-- Barra de navegación -->
-    <header
-      class="container-fluid p-3 border-bottom bg-dark"
-    >
+    <header class="container-fluid p-3 border-bottom bg-dark">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <a class="navbar-brand fw-bold" href="/">Habit Tracker</a>
@@ -63,12 +61,8 @@
     </header>
 
     <!-- Contenido principal -->
-    <main class="container my-5">
-      <h1 class="text-center mb-4">Contáctanos</h1>
-      <p class="text-center text-muted mb-5">
-        Si tienes alguna pregunta, sugerencia o problema con la aplicación,
-        completa el formulario y nos pondremos en contacto contigo.
-      </p>
+    <main id="container-contact" class="container my-5 rounded">
+      <h1 class="text-center mb-4 text-dark">Contáctanos</h1>
 
       <form
         action="/send_message"

@@ -318,15 +318,14 @@ def home(user_id):
             habit_id = data.get('habitId')
             name = data.get('name')
             description = data.get('description')
-            deadline = data.get('deadline')
 
-            if name is None or description is None or deadline is None:
+            if name is None or description is None:
                 return jsonify({'error': "Faltan datos obligatorios"}), 400
 
             with connection.cursor() as cur:
                 # Funcion para actualizar los datos del habito
-                sql = "UPDATE habits SET name = %s, description = %s, deadline = %s WHERE id = %s"
-                cur.execute(sql,(name, description, deadline, habit_id))
+                sql = "UPDATE habits SET name = %s, description = %s WHERE id = %s"
+                cur.execute(sql,(name, description, habit_id))
                 connection.commit()
             return jsonify({'message': 'Hábito actualizado con éxito'}), 200
 

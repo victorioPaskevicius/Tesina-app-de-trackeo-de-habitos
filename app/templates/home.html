@@ -66,161 +66,160 @@
     <!-- Seccion de habitos -->
     <article class="container-sm px-5 d-flex flex-column gap-5 mb-5">
       <div
-        class="accordion accordion-flush bg-dark p-1 text-center"
-        id="accordionFlushExample"
+        class="accordion accordion-flush bg-dark p-3 rounded-4 shadow-sm"
+        id="accordionHabits"
       >
-        {{message}} {% for habit in habits %}
-        <div class="accordion-item bg-dark text-light">
+        {% if message %}
+        <p class="text-center text-light mb-4">{{ message }}</p>
+        {% endif %} {% for habit in habits %}
+        <div
+          class="accordion-item bg-secondary text-light rounded-3 mb-3 shadow-sm overflow-hidden"
+        >
           <h2 class="accordion-header">
             <button
-              class="accordion-button collapsed bg-secondary"
+              class="accordion-button collapsed bg-gradient text-light fw-semibold"
+              style="
+                background: linear-gradient(90deg, #343a40 0%, #495057 100%);
+              "
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#flush-collapse{{ habit.id }}"
+              data-bs-target="#collapseHabit{{ habit.id }}"
               aria-expanded="false"
-              aria-controls="flush-collapse{{ habit.id }}"
+              aria-controls="collapseHabit{{ habit.id }}"
             >
-              {{ habit.name }} {% if habit.is_complete %}
-              <span class="badge bg-success ms-2">✔</span>
-              {% else %}
-              <span class="badge bg-danger ms-2">✖</span>
-              {% endif %}
+              <div
+                class="d-flex justify-content-between align-items-center w-100"
+              >
+                <span>{{ habit.name }}</span>
+                {% if habit.is_complete %}
+                <span class="badge bg-success">Completado ✔</span>
+                {% else %}
+                <span class="badge bg-warning text-dark">Pendiente ⏳</span>
+                {% endif %}
+              </div>
             </button>
           </h2>
+
           <div
-            id="flush-collapse{{ habit.id }}"
+            id="collapseHabit{{ habit.id }}"
             class="accordion-collapse collapse"
-            data-bs-parent="#accordionFlushExample"
+            data-bs-parent="#accordionHabits"
           >
-            <p class="w-50 text-center m-auto p-3">{{ habit.description }}</p>
-
-            <hr />
             <div
-              class="d-flex justify-content-around gap-5 pb-3"
-              role="group"
-              aria-label="Basic checkbox toggle button group"
+              class="accordion-body bg-dark text-light text-center p-4 rounded-bottom"
             >
-              {% if habit.isComplete %}
-              <button type="button" class="btn btn-success">
-                Completado ✔
-              </button>
-              {% else %} {% if habit.is_complete %}
-              <button
-                type="button"
-                class="btn btn-outline-danger btn-toggle-complete"
-                data-habit-id="{{ habit.id }}"
-              >
-                Marcar como Pendiente
-              </button>
-              {% else %}
-              <button
-                type="button"
-                class="btn btn-outline-success btn-toggle-complete"
-                data-habit-id="{{ habit.id }}"
-              >
-                Marcar como Completado
-              </button>
-              {% endif %} {% endif %}
-
-              <!-- Boton para editar habito -->
-              <button
-                type="button"
-                class="btn btn-warning"
-                data-bs-toggle="modal"
-                data-bs-target="#editModal{{ habit.id }}"
-              >
-                Editar
-              </button>
-
-              <!-- Popup editar habit -->
-              <div
-                class="modal fade"
-                id="editModal{{ habit.id }}"
-                data-bs-backdrop="static"
-                data-bs-keyboard="false"
-                tabindex="-1"
-                aria-labelledby="editModalLabel{{ habit.id }}"
-                aria-hidden="true"
-              >
-                <form
-                  class="container form-edit-habit"
+              <p class="mb-3 fst-italic">{{ habit.description }}</p>
+              <div class="d-flex justify-content-center flex-wrap gap-3">
+                {% if habit.is_complete %}
+                <button
+                  type="button"
+                  class="btn btn-success btn-toggle-complete"
                   data-habit-id="{{ habit.id }}"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1
-                          class="modal-title fs-5"
-                          id="editModalLabel{{ habit.id }}"
-                        >
-                          Actualiza tu hábito
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
+                  ✅ Completado
+                </button>
+                {% else %}
+                <button
+                  type="button"
+                  class="btn btn-outline-success btn-toggle-complete"
+                  data-habit-id="{{ habit.id }}"
+                >
+                  Marcar como completado
+                </button>
+                {% endif %}
 
-                      <div class="modal-body d-flex flex-column gap-3">
-                        <div class="mb-3">
-                          <label
-                            for="title{{ habit.id }}"
-                            class="form-label text-dark"
-                            >Título</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="title{{ habit.id }}"
-                            name="title"
-                            value="{{ habit.name }}"
-                            required
-                          />
+                <!-- Botón Editar -->
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal{{ habit.id }}"
+                >
+                  ✏️ Editar
+                </button>
+
+                <!-- Modal Editar -->
+                <div
+                  class="modal fade"
+                  id="editModal{{ habit.id }}"
+                  tabindex="-1"
+                  aria-labelledby="editModalLabel{{ habit.id }}"
+                  aria-hidden="true"
+                >
+                  <form
+                    class="container form-edit-habit"
+                    data-habit-id="{{ habit.id }}"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content bg-light">
+                        <div class="modal-header">
+                          <h5 class="modal-title fw-bold text-dark">
+                            Editar hábito
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
                         </div>
-
-                        <div class="mb-3">
-                          <label
-                            for="description{{ habit.id }}"
-                            class="form-label text-dark"
-                            >Descripción</label
-                          >
-                          <textarea
-                            class="form-control"
-                            id="description{{ habit.id }}"
-                            name="description"
-                            rows="3"
-                          >
-                            {{ habit.description }}
-                          </textarea>
+                        <div class="modal-body">
+                          <div class="mb-3">
+                            <label
+                              for="title{{ habit.id }}"
+                              class="form-label text-dark"
+                              >Título</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="titleEdit{{ habit.id }}"
+                              name="title"
+                              value="{{ habit.name }}"
+                              required
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label
+                              for="description{{ habit.id }}"
+                              class="form-label text-dark"
+                              >Descripción</label
+                            >
+                            <textarea
+                              class="form-control"
+                              id="descriptionEdit{{ habit.id }}"
+                              name="description"
+                              rows="3"
+                            >
+                              {{ habit.description }}
+                            </textarea>
+                          </div>
                         </div>
-                      </div>
-
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Cancelar
-                        </button>
-                        <button type="submit" class="btn btn-success">
-                          Guardar cambios
-                        </button>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Cancelar
+                          </button>
+                          <button type="submit" class="btn btn-success">
+                            Guardar cambios
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
+
+                <!-- Botón Eliminar -->
+                <button
+                  type="button"
+                  class="btn btn-outline-danger btn-delete"
+                  data-habit-id="{{ habit.id }}"
+                >
+                  🗑 Eliminar
+                </button>
               </div>
-              <!-- Boton para eliminar habito -->
-              <button
-                data-habit-id="{{ habit.id }}"
-                type="button"
-                class="btn btn-danger btn-delete"
-              >
-                Eliminar
-              </button>
             </div>
           </div>
         </div>
@@ -307,19 +306,81 @@
     </article>
 
     <!-- Seccion de estadisticas y graficos -->
-    <article class="container-sm bg-secondary">
-      <h2>Estadisticas</h2>
+    <article
+      class="container-sm bg-dark text-light rounded-4 p-5 my-5 shadow-sm"
+    >
+      <h2 class="text-center mb-4 fw-bold">📊 Tus estadísticas</h2>
 
-      {% for habit in habits %}
-      <p>{{ habit.name }}</p>
-      <p>Racha actual: {{ habit.current_streak }} días</p>
-      <p>Porcentaje de cumplimiento: {{ habit.completion_rate }}%</p>
-      <hr />
-      {% endfor %}
-      <h2>Progreso de hoy</h2>
-      <p>Hábitos totales: {{ metrics.total_today }}</p>
-      <p>Completados: {{ metrics.completed_today }}</p>
-      <p>Pendientes: {{ metrics.pending_today }}</p>
+      <!-- Métricas generales de hoy -->
+      <section class="row text-center mb-5">
+        <div class="col-md-4 mb-3">
+          <div
+            class="card bg-success bg-opacity-25 border-success rounded-3 p-3"
+          >
+            <h5 class="fw-bold">Hábitos totales</h5>
+            <p class="display-6 fw-bold text-success">
+              {{ metrics.total_today }}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div
+            class="card bg-primary bg-opacity-25 border-primary rounded-3 p-3"
+          >
+            <h5 class="fw-bold">Completados hoy</h5>
+            <p class="display-6 fw-bold text-primary">
+              {{ metrics.completed_today }}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div
+            class="card bg-warning bg-opacity-25 border-warning rounded-3 p-3"
+          >
+            <h5 class="fw-bold">Pendientes</h5>
+            <p class="display-6 fw-bold text-warning">
+              {{ metrics.pending_today }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Estadísticas individuales -->
+      <section>
+        <h3 class="text-center mb-4">📈 Progreso por hábito</h3>
+
+        {% for habit in habits %}
+        <div
+          class="card bg-secondary text-light mb-4 shadow-sm border-0 rounded-4 overflow-hidden"
+        >
+          <div class="card-body px-5">
+            <div
+              class="d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h5 class="card-title fw-bold mb-0">{{ habit.name }}</h5>
+              <span class="badge bg-success bg-opacity-75 p-2 fs-4">
+                {{ habit.current_streak }} 🔥 racha
+              </span>
+            </div>
+
+            <div class="mt-3">
+              <p class="mb-1">Porcentaje de cumplimiento:</p>
+              <div class="progress bg-secondary" style="height: 30px">
+                <div
+                  class="progress-bar bg-success m-auto w-100 h-100 rounded"
+                  role="progressbar"
+                  aria-valuenow="{{ habit.completion_rate }}"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  {{ habit.completion_rate }}%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </section>
     </article>
 
     <footer class="container-fluid bg-dark text-light py-4 mt-5">
