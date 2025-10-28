@@ -1,0 +1,64 @@
+# Habit Tracker App Thesis
+
+### Application Execution
+
+1. **Install dependencies**  
+   - Make sure you have Python and pip installed.
+   - Install dependencies with:  
+     ```
+     pip install -r requirements.txt
+     ```
+2. **Configure the database**
+   - Use MySQL and create the `habit_tracker` database.
+   - Set credentials in `app/database/db.py`:
+     ```python
+     connection = mysql.connector.connect(
+         host='localhost',
+         user='root',
+         password='',
+         database='habit_tracker'
+     )
+     ```
+3. **Run the application**
+   - From the root folder, run:
+     ```
+     python app/app.py
+     ```
+   - The app runs on port 3001 by default.
+
+### Implemented Features
+
+- **User registration and login**  
+  Data validation in both frontend and backend.
+- **Habit CRUD**  
+  - Create, view, edit, and delete habits.
+  - Mark as completed.
+- **View registered users**
+- **Timer per habit**
+
+### Technologies Used
+
+- **Backend:** Python, Flask, MySQL
+- **Frontend:** HTML, CSS, JavaScript
+
+### Database Connection
+
+- Make sure MySQL is running and the `habit_tracker` database exists.
+- Modify user and password in `app/database/db.py` if needed.
+
+### CRUD Functionality Testing
+
+- **Create:**  
+  Use the "New habit" button in the interface.
+- **Read:**  
+  Habits and users are listed on the main page.
+- **Update:**  
+  Use the "Edit" button next to each habit.
+- **Delete:**  
+  Use the "Delete" button next to each habit.
+
+### Additional Features
+
+- **Form validation:**  
+  Registration validates name, email, password, and phone number.
+- **Simple timer for habits.**

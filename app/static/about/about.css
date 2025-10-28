@@ -1,0 +1,31 @@
+body {
+    background-image: url("../images/bgAbout.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#bg-main {
+  backdrop-filter: blur(10px);
+  background-color: rgba(211, 211, 211, 0.4); /* negro translúcido encima del blur */
+  box-shadow: 0 0 20px 5px black;
+  padding: 20px;
+  border-radius: 15px;
+}
+.header_img {
+  height: 65px;
+  border-radius: 50%;
+}
+
+#about_illustration {
+    height: 400px;
+}
+
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}

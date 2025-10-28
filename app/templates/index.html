@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker - Inicio</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for( 'static', filename='index.css' ) }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for( 'static', filename='index/index.css' ) }}"
+    />
+  </head>
+
+  <body class="d-flex flex-column gap-5">
+    <!-- Header -->
+    <header
+      class="container-fluid d-flex gap-3 align-items-center justify-content-around header p-3 border-bottom bg-dark"
+    >
+      <div class="">
+        <a
+          class="d-flex align-items-center gap-3 link-offset-2 link-underline link-underline-opacity-0"
+          href="/"
+        >
+          <img
+            class="header_img img-fluid"
+            src="../static/images/Logo.png"
+            alt=""
+          />
+          <p class="fs-4 m-auto text-secondary fw-bold">Habit Tracker</p>
+        </a>
+      </div>
+      <div class="">
+        <p class="m-auto text-success fw-bold fst-italic fs-5">
+          Convierte tus pequeños hábitos en grandes logros
+        </p>
+      </div>
+      <div class="d-flex gap-1">
+        <a
+          class="btn btn-success link-offset-2 link-underline link-underline-opacity-0"
+          href="/register"
+          >Empieza ahora</a
+        >
+        <a
+          class="btn btn-outline-success link-offset-2 link-underline link-underline-opacity-0"
+          href="/login"
+          >Inicia sesion</a
+        >
+      </div>
+    </header>
+
+    <!-- Filosofía -->
+    <section
+      class="p-5 container-sm text-center text-light bg-dark rounded-4 shadow-lg"
+    >
+      <h2 class="fw-bold mb-4">Nuestra filosofía</h2>
+
+      <div class="row align-items-center justify-content-center g-4">
+        <div class="col-md-7 px-4 text-start">
+          <p class="lead mb-3">
+            Los hábitos son pequeñas acciones que, repetidas cada día,
+            construyen grandes resultados. Cada paso constante te acerca a tus
+            objetivos y te ayuda a mejorar tu bienestar.
+          </p>
+          <p class="text-light opacity-75">
+            En nuestra app creemos que el cambio empieza con la constancia. Con
+            el seguimiento adecuado, podés transformar tus rutinas en un estilo
+            de vida más equilibrado, productivo y pleno.
+          </p>
+        </div>
+
+        <div class="col-md-5">
+          <img
+            src="../static/images/Img1index.jpg"
+            alt="Ilustración sobre hábitos y progreso"
+            class="img-fluid rounded-4 shadow"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona (Hay que poner las imagenes correspondientes)  -->
+    <section
+      class="funciona container-fluid p-5 text-center d-flex flex-column align-items-center gap-5 border shadow-lg rounded-4"
+    >
+      <h2 class="fw-bold mb-4">
+        Empieza a cambiar tu vida en
+        <span class="text-success">4 pasos</span>
+      </h2>
+
+      <ol class="list-unstyled fs-5 text-start">
+        <li class="mb-3">
+          1️⃣ Regístrate en segundos y accede a tu panel personal
+        </li>
+        <li class="mb-3">
+          2️⃣ Define tus objetivos: leer, hacer ejercicio, beber agua...
+        </li>
+        <li class="mb-3">
+          3️⃣ Marca tus hábitos día a día y construye constancia
+        </li>
+        <li>4️⃣ Observa tus logros en gráficos y celebra tu evolución</li>
+      </ol>
+
+      <!-- Carrusel de imágenes (oculto en pantallas pequeñas) -->
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide shadow-lg rounded-4 overflow-hidden w-100 d-none d-sm-block"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../static/images/Img1index.png"
+              class="w-50 rounded"
+              alt="Paso 1: Crear cuenta"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../static/images/Img2index.png"
+              class="w-50 rounded"
+              alt="Paso 2: Definir hábitos"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../static/images/Img3index.png"
+              class="w-50 rounded"
+              alt="Paso 3: Ver progreso"
+            />
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-lg btn-success px-5 py-3 shadow-sm fw-semibold">
+          Crea tu primer hábito
+        </button>
+      </div>
+    </section>
+
+    <!-- Estudios -->
+    <section
+      class="estudios p-5 container-sm text-center text-light bg-dark rounded-4 shadow-lg"
+    >
+      <h2 class="fw-bold mb-4">Motívate viendo tu progreso ✨</h2>
+
+      <p class="lead mb-4">
+        Cada hábito que cumplís te acerca un paso más a tus metas. Nuestra app
+        transforma tu constancia en <strong>gráficos y estadísticas</strong> que
+        muestran tu crecimiento real.
+      </p>
+
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-secondary bg-opacity-25 rounded-3">
+            <span class="fs-1 d-block mb-2">📈</span>
+            <h5 class="fw-semibold">Visualizá tus logros</h5>
+            <p class="small text-light opacity-75">
+              Observá cómo tus rachas y porcentajes aumentan día tras día.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-4 bg-secondary bg-opacity-25 rounded-3">
+            <span class="fs-1 d-block mb-2">🔥</span>
+            <h5 class="fw-semibold">Mantené tus rachas</h5>
+            <p class="small text-light opacity-75">
+              No rompas la cadena: la constancia es la clave del éxito.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-4 bg-secondary bg-opacity-25 rounded-3">
+            <span class="fs-1 d-block mb-2">🎯</span>
+            <h5 class="fw-semibold">Celebrá tus avances</h5>
+            <p class="small text-light opacity-75">
+              Cada día cumplido cuenta. Reconocé tu esfuerzo y seguí creciendo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4 text-light opacity-75">
+        Establecer rutinas reduce el estrés, mejora la productividad y te ayuda
+        a construir una versión más organizada de vos mismo.
+      </p>
+    </section>
+
+    <!-- Beneficios -->
+    <section
+      class="beneficios border container-sm py-5 px-4 text-center shadow-lg rounded-4"
+    >
+      <h2 class="mb-4 fw-bold">Beneficios de usar Habit Tracker</h2>
+      <p class="mb-5">
+        Crear buenos hábitos no tiene por qué ser difícil. Nuestra app te ayuda
+        a mantenerte enfocado, medir tu progreso y construir la vida que querés
+        paso a paso.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
+          >
+            <span class="fs-2 d-block mb-3">📅</span>
+            <h5 class="fw-semibold">Organizá tu día</h5>
+            <p class="small">
+              Planificá tus hábitos y mantené un registro claro de tus metas
+              diarias.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
+          >
+            <span class="fs-2 d-block mb-3">🚀</span>
+            <h5 class="fw-semibold">Aumentá tu productividad</h5>
+            <p class="small">
+              Transformá tus rutinas en acciones consistentes y medibles.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
+          >
+            <span class="fs-2 d-block mb-3">💪</span>
+            <h5 class="fw-semibold">Mejorá tu bienestar</h5>
+            <p class="small">
+              Adoptá hábitos saludables que te acerquen a una vida más
+              equilibrada.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
+          >
+            <span class="fs-2 d-block mb-3">📊</span>
+            <h5 class="fw-semibold">Visualizá tu progreso</h5>
+            <p class="small">
+              Observá tus avances diarios y mantené la motivación en alto.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <a href="/register" class="btn btn-success"> ¡Empezá hoy mismo! </a>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <footer class="container-fluid bg-dark text-light pt-4 mt-5">
+      <div class="container text-center text-md-start">
+        <div class="row">
+          <!-- Sección sobre la app -->
+          <div class="col-md-4 mb-3">
+            <h5 class="text-uppercase fw-bold">Habit Tracker</h5>
+            <p>
+              Organiza tu vida, mejora tus hábitos y alcanza tus metas paso a
+              paso. Empieza hoy a construir la mejor versión de ti.
+            </p>
+          </div>
+
+          <!-- Enlaces útiles -->
+          <div class="col-md-4 mb-3">
+            <h6 class="text-uppercase fw-bold">Enlaces</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="/" class="text-light text-decoration-none">Inicio</a>
+              </li>
+              <li>
+                <a href="/about" class="text-light text-decoration-none"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a href="/contact" class="text-light text-decoration-none"
+                  >Contacto</a
+                >
+              </li>
+              <li>
+                <a href="/register" class="text-light text-decoration-none"
+                  >Registrarse</a
+                >
+              </li>
+              <li>
+                <a href="/login" class="text-light text-decoration-none"
+                  >Iniciar Sesión</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Redes sociales -->
+          <div class="col-md-4 mb-3 text-center text-md-end">
+            <h6 class="text-uppercase fw-bold">Síguenos</h6>
+            <a href="#" class="text-light me-3"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-light me-3"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-light me-3"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a href="#" class="text-light"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-3 mt-3 border-top border-secondary">
+        © 2025 Habit Tracker — Todos los derechos reservados
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

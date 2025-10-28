@@ -1,0 +1,18 @@
+body {
+    background-image: url("../images/bgContact.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#container-contact {
+    backdrop-filter: blur(10px);
+    box-shadow: black 0px 0px 20px 5px;
+
+    padding: 20px;
+}
+
+.header_img {
+  height: 65px;
+  border-radius: 50%;
+}
