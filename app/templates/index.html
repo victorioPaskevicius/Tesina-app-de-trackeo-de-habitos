@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Habit Tracker - Inicio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
     <link rel="stylesheet" href="/static/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -55,10 +60,13 @@
         >
       </div>
     </header>
+  
+    <h1 class="text-dark text-center w-100 my-5">Bienvenido a <span class="text-success fw-bold">Habit Tracker</span></h1>
+
 
     <!-- Filosofía -->
     <section
-      class="p-5 container-sm text-center text-light bg-dark rounded-4 shadow-lg"
+      class="p-5 mb-5 container-sm text-center text-light bg-dark rounded-4 shadow-lg"
     >
       <h2 class="fw-bold mb-4">Nuestra filosofía</h2>
 
@@ -88,30 +96,86 @@
 
     <!-- Cómo funciona (Hay que poner las imagenes correspondientes)  -->
     <section
-      class="funciona container-fluid p-5 text-center d-flex flex-column align-items-center gap-5 border shadow-lg rounded-4"
+      class="container-fluid p-5 my-5 text-center d-flex flex-column align-items-center gap-5 border shadow-lg"
     >
       <h2 class="fw-bold mb-4">
         Empieza a cambiar tu vida en
         <span class="text-success">4 pasos</span>
       </h2>
 
-      <ol class="list-unstyled fs-5 text-start">
-        <li class="mb-3">
-          1️⃣ Regístrate en segundos y accede a tu panel personal
-        </li>
-        <li class="mb-3">
-          2️⃣ Define tus objetivos: leer, hacer ejercicio, beber agua...
-        </li>
-        <li class="mb-3">
-          3️⃣ Marca tus hábitos día a día y construye constancia
-        </li>
-        <li>4️⃣ Observa tus logros en gráficos y celebra tu evolución</li>
-      </ol>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Tarjeta 1 -->
+        <div class="col">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3"></div>
+              <h5 class="card-title fw-bold text-success">
+                Regístrate en segundos
+              </h5>
+              <p class="card-text text-secondary">
+                Crea tu cuenta fácilmente y accede a tu panel personal donde
+                podrás comenzar a organizar tus metas diarias y seguir tu
+                progreso desde cualquier dispositivo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3"></div>
+              <h5 class="card-title fw-bold text-success">
+                Define tus objetivos
+              </h5>
+              <p class="card-text text-secondary">
+                Elige los hábitos que quieres mejorar: leer más, hacer
+                ejercicio, dormir mejor o beber más agua. Personaliza cada
+                objetivo a tu ritmo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3"></div>
+              <h5 class="card-title fw-bold text-success">
+                Marca tu progreso diario
+              </h5>
+              <p class="card-text text-secondary">
+                Registra tus logros cada día y mantén la constancia. Pequeños
+                pasos diarios te llevarán a grandes resultados con el tiempo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3"></div>
+              <h5 class="card-title fw-bold text-success">
+                Observa tus avances
+              </h5>
+              <p class="card-text text-secondary">
+                Visualiza tu evolución con gráficos claros y celebra tus logros.
+                Analiza tu constancia y descubre en qué hábitos estás mejorando
+                día a día.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Carrusel de imágenes (oculto en pantallas pequeñas) -->
       <div
         id="carouselExampleIndicators"
-        class="carousel slide shadow-lg rounded-4 overflow-hidden w-100 d-none d-sm-block"
+        class="carousel slide rounded-4 overflow-hidden w-75 d-none d-sm-block"
         data-bs-ride="carousel"
       >
         <div class="carousel-indicators">
@@ -137,21 +201,21 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="../static/images/Img1index.png"
+              src="../static/images/carouselImgIndex1.jpg"
               class="w-50 rounded"
               alt="Paso 1: Crear cuenta"
             />
           </div>
           <div class="carousel-item">
             <img
-              src="../static/images/Img2index.png"
+              src="../static/images/carouselImgIndex2.jpg"
               class="w-50 rounded"
               alt="Paso 2: Definir hábitos"
             />
           </div>
           <div class="carousel-item">
             <img
-              src="../static/images/Img3index.png"
+              src="../static/images/carouselImgIndex3.jpg"
               class="w-50 rounded"
               alt="Paso 3: Ver progreso"
             />
@@ -179,17 +243,21 @@
       </div>
 
       <div class="text-center mt-4">
-        <button class="btn btn-lg btn-success px-5 py-3 shadow-sm fw-semibold">
-          Crea tu primer hábito
-        </button>
+        <a href="/login"
+          ><button
+            class="btn btn-lg btn-success px-5 py-3 shadow-sm fw-semibold"
+          >
+            Crea tu primer habito
+          </button></a
+        >
       </div>
     </section>
 
     <!-- Estudios -->
     <section
-      class="estudios p-5 container-sm text-center text-light bg-dark rounded-4 shadow-lg"
+      class="estudios p-5 my-5 container-sm text-center text-light bg-dark rounded-4 shadow-lg"
     >
-      <h2 class="fw-bold mb-4">Motívate viendo tu progreso ✨</h2>
+      <h2 class="fw-bold mb-4">Motívate viendo tu progreso</h2>
 
       <p class="lead mb-4">
         Cada hábito que cumplís te acerca un paso más a tus metas. Nuestra app
@@ -197,33 +265,40 @@
         muestran tu crecimiento real.
       </p>
 
-      <div class="row justify-content-center mb-4">
+      <div class="row justify-content-center mb-4 gy-4">
+        <!-- Visualizá tus logros -->
         <div class="col-md-4">
           <div class="p-4 bg-secondary bg-opacity-25 rounded-3">
-            <span class="fs-1 d-block mb-2">📈</span>
+            <i class="bi bi-graph-up-arrow text-success fs-1 mb-3"></i>
             <h5 class="fw-semibold">Visualizá tus logros</h5>
             <p class="small text-light opacity-75">
               Observá cómo tus rachas y porcentajes aumentan día tras día.
+              Consultá tus estadísticas personales y descubrí tus puntos
+              fuertes.
             </p>
           </div>
         </div>
 
+        <!-- Mantené tus rachas -->
         <div class="col-md-4">
           <div class="p-4 bg-secondary bg-opacity-25 rounded-3">
-            <span class="fs-1 d-block mb-2">🔥</span>
+            <i class="bi bi-fire text-warning fs-1 mb-3"></i>
             <h5 class="fw-semibold">Mantené tus rachas</h5>
             <p class="small text-light opacity-75">
-              No rompas la cadena: la constancia es la clave del éxito.
+              No rompas la cadena: la constancia es la clave del éxito. Habit
+              Tracker te recuerda tus logros para mantenerte motivado día a día.
             </p>
           </div>
         </div>
 
+        <!-- Celebrá tus avances -->
         <div class="col-md-4">
           <div class="p-4 bg-secondary bg-opacity-25 rounded-3">
-            <span class="fs-1 d-block mb-2">🎯</span>
+            <i class="bi bi-calendar-heart text-danger fs-1 mb-3"></i>
             <h5 class="fw-semibold">Celebrá tus avances</h5>
             <p class="small text-light opacity-75">
-              Cada día cumplido cuenta. Reconocé tu esfuerzo y seguí creciendo.
+              Cada día cumplido cuenta. Reconocé tu esfuerzo, celebrá tus metas
+              alcanzadas y seguí creciendo con energía positiva.
             </p>
           </div>
         </div>
@@ -237,7 +312,7 @@
 
     <!-- Beneficios -->
     <section
-      class="beneficios border container-sm py-5 px-4 text-center shadow-lg rounded-4"
+      class="container-fluid p-5 my-5 text-center d-flex flex-column align-items-center gap-5 border shadow-lg"
     >
       <h2 class="mb-4 fw-bold">Beneficios de usar Habit Tracker</h2>
       <p class="mb-5">
@@ -246,53 +321,59 @@
         paso a paso.
       </p>
 
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div
-            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
-          >
-            <span class="fs-2 d-block mb-3">📅</span>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <span class="fs-2 d-block mb-3"
+              ><i class="bi bi-calendar-check fs-2 text-success mb-3"></i
+            ></span>
             <h5 class="fw-semibold">Organizá tu día</h5>
             <p class="small">
               Planificá tus hábitos y mantené un registro claro de tus metas
-              diarias.
+              diarias. Establecé recordatorios, creá rutinas personalizadas y
+              asegurate de aprovechar cada jornada al máximo.
             </p>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
-          <div
-            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
-          >
-            <span class="fs-2 d-block mb-3">🚀</span>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <span class="fs-2 d-block mb-3"
+              ><i class="bi bi-rocket-takeoff fs-2 text-success mb-3"></i
+            ></span>
             <h5 class="fw-semibold">Aumentá tu productividad</h5>
             <p class="small">
-              Transformá tus rutinas en acciones consistentes y medibles.
+              Transformá tus rutinas en acciones consistentes y medibles. Habit
+              Tracker te ayuda a mantener el enfoque en lo importante y
+              convertir tus objetivos en logros concretos.
             </p>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
-          <div
-            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
-          >
-            <span class="fs-2 d-block mb-3">💪</span>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <span class="fs-2 d-block mb-3"
+              ><i class="bi bi-heart-pulse fs-2 text-success mb-3"></i
+            ></span>
             <h5 class="fw-semibold">Mejorá tu bienestar</h5>
             <p class="small">
               Adoptá hábitos saludables que te acerquen a una vida más
-              equilibrada.
+              equilibrada. Dormí mejor, comé bien y dedicá tiempo a lo que
+              realmente te hace sentir bien, día tras día.
             </p>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
-          <div
-            class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25 rounded-3"
-          >
-            <span class="fs-2 d-block mb-3">📊</span>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="p-4 h-100 shadow-sm rounded-4 bg-secondary bg-opacity-25">
+            <span class="fs-2 d-block mb-3"
+              ><i class="bi bi-graph-up-arrow fs-2 text-success mb-3"></i
+            ></span>
             <h5 class="fw-semibold">Visualizá tu progreso</h5>
             <p class="small">
-              Observá tus avances diarios y mantené la motivación en alto.
+              Observá tus avances diarios y mantené la motivación en alto. Los
+              gráficos y estadísticas te muestran cómo cada pequeño paso te
+              acerca a tus metas.
             </p>
           </div>
         </div>

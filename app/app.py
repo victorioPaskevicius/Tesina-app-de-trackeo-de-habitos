@@ -369,7 +369,7 @@ def login():
                 'user_id': user['id']
             })
         else: 
-            return jsonify({'error': 'Email o contraseña icorrectas'}), 404
+            return jsonify({'error': 'Email o contraseña incorrectas'}), 404
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500

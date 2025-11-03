@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <title>Inicio</title>
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
@@ -20,9 +24,9 @@
   <body>
     <!-- Header -->
     <header class="container-fluid p-3 border-bottom bg-dark">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand fw-bold text-secondary" href="/"
+          <a class="navbar-brand fw-bold text-light" href="/"
             ><img
               class="header_img mx-2"
               src="../static/images/Logo.png"
@@ -65,14 +69,20 @@
       </nav>
     </header>
 
-    <h1 class="fs-1">
-      Bienvenido a
-      <span class="text-decoration-underline fw-bold">Habit Tracker</span>
+    <h1 class="fs-1 mt-5 text-center m-auto text-success fw-bold">
+      Transforma tus hábitos, transforma tu vida
     </h1>
+    <p class="lead text-center m-auto fw-bold px-3">
+      Crea rutinas que te impulsen a mejorar día a día con Habit Tracker.
+    </p>
+
     <!-- Seccion de habitos -->
-    <article class="container-sm px-5 d-flex flex-column gap-5 mb-5">
+    <article
+      id="article_1"
+      class="container-sm px-5 d-flex flex-column gap-5 mb-5"
+    >
       <div
-        class="accordion accordion-flush bg-dark p-3 rounded-4 shadow-sm"
+        class="accordion accordion-flush bg-dark bg-opacity-75 p-3 rounded-4 shadow-sm"
         id="accordionHabits"
       >
         {% if message %}
@@ -96,11 +106,19 @@
               <div
                 class="d-flex justify-content-between align-items-center w-100"
               >
-                <span>{{ habit.name }}</span>
+                <span class="text-dark fw-bold fs-5 px-3"
+                  >{{ habit.name }}</span
+                >
                 {% if habit.is_complete %}
-                <span class="badge bg-success">Completado ✔</span>
+                <span
+                  class="text-dark fw-bold fs-5 px-3 mx-3 bg-success bg-opacity-75 shadow-lg badge"
+                  >Completado</span
+                >
                 {% else %}
-                <span class="badge bg-warning text-dark">Pendiente ⏳</span>
+                <span
+                  class="text-dark fw-bold fs-5 px-3 mx-3 bg-warning bg-opacity-50 shadow-lg badge"
+                  >Pendiente</span
+                >
                 {% endif %}
               </div>
             </button>
@@ -112,17 +130,17 @@
             data-bs-parent="#accordionHabits"
           >
             <div
-              class="accordion-body bg-dark text-light text-center p-4 rounded-bottom"
+              class="accordion-body bg-dark bg-opacity-75 text-light text-center p-4 rounded-bottom"
             >
               <p class="mb-3 fst-italic">{{ habit.description }}</p>
               <div class="d-flex justify-content-center flex-wrap gap-3">
                 {% if habit.is_complete %}
                 <button
                   type="button"
-                  class="btn btn-success btn-toggle-complete"
+                  class="btn btn-danger btn-toggle-complete"
                   data-habit-id="{{ habit.id }}"
                 >
-                  ✅ Completado
+                  Marcar como pendiente
                 </button>
                 {% else %}
                 <button
@@ -235,7 +253,7 @@
       <!-- Botón para añadir nuevo hábito -->
       <button
         type="button"
-        class="btn btn-outline-success"
+        class="btn btn-success"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >
@@ -313,9 +331,12 @@
 
     <!-- Seccion de estadisticas y graficos -->
     <article
-      class="container-sm bg-dark text-light rounded-4 p-5 my-5 shadow-sm"
+      class="container-sm bg-dark bg-opacity-75 text-light rounded-4 p-5 my-5 shadow-sm"
     >
-      <h2 class="text-center mb-4 fw-bold">📊 Tus estadísticas</h2>
+      <h2 class="text-center mb-4 fw-bold">
+        <img id="svgHome" src="../static/images/metricsHome.svg" alt="" /> Tus
+        estadísticas
+      </h2>
 
       <!-- Métricas generales de hoy -->
       <section class="row text-center mb-5">
@@ -324,9 +345,7 @@
             class="card bg-success bg-opacity-25 border-success rounded-3 p-3"
           >
             <h5 class="fw-bold">Hábitos totales</h5>
-            <p class="display-6 fw-bold text-success">
-              {{ metrics.total_today }}
-            </p>
+            <p class="display-6 fw-bold text-dark">{{ metrics.total_today }}</p>
           </div>
         </div>
         <div class="col-md-4 mb-3">
@@ -334,7 +353,7 @@
             class="card bg-primary bg-opacity-25 border-primary rounded-3 p-3"
           >
             <h5 class="fw-bold">Completados hoy</h5>
-            <p class="display-6 fw-bold text-primary">
+            <p class="display-6 fw-bold text-dark">
               {{ metrics.completed_today }}
             </p>
           </div>
@@ -344,7 +363,7 @@
             class="card bg-warning bg-opacity-25 border-warning rounded-3 p-3"
           >
             <h5 class="fw-bold">Pendientes</h5>
-            <p class="display-6 fw-bold text-warning">
+            <p class="display-6 fw-bold text-dark">
               {{ metrics.pending_today }}
             </p>
           </div>
@@ -353,7 +372,10 @@
 
       <!-- Estadísticas individuales -->
       <section>
-        <h3 class="text-center mb-4">📈 Progreso por hábito</h3>
+        <h3 class="text-center mb-4">
+          <img id="svgHome" src="../static/images/progress.svg" alt="" />
+          Progreso por hábito
+        </h3>
 
         {% for habit in habits %}
         <div
@@ -365,7 +387,8 @@
             >
               <h5 class="card-title fw-bold mb-0">{{ habit.name }}</h5>
               <span class="badge bg-success bg-opacity-75 p-2 fs-4">
-                {{ habit.current_streak }} 🔥 racha
+                <span class="bi bi-fire text-warning"></span> {{
+                habit.current_streak }} racha
               </span>
             </div>
 

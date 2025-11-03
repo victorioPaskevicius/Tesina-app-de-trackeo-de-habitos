@@ -11,18 +11,18 @@
     />
     <link
       rel="stylesheet"
-      href="{{url_for('static', filename='home/home.css')}}"
+      href="{{ url_for('static', filename='index.css') }}"
     />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='index.css') }}"
+      href="{{url_for('static', filename='about/about.css')}}"
     />
   </head>
 
   <body class="bg-light">
     <!-- Barra de navegación -->
     <header class="container-fluid p-3 border-bottom bg-dark">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
           <a class="navbar-brand fw-bold" href="/"
             ><img src="../static/images/Logo.png" class="header_img" alt="" />
@@ -104,88 +104,101 @@
       </section>
 
       <!-- Sección de características mejorada -->
-<section class="text-center mb-5 container">
-  <h2 class="fw-bold mb-4 text-dark display-6">
-    ¿Qué hace especial a <span class="text-primary">Habit Tracker</span>?
-  </h2>
-  <p class="text-muted mb-5">
-    Diseñamos esta herramienta pensando en tu progreso. Cada detalle busca
-    ayudarte a formar hábitos duraderos y mantener la motivación día a día.
-  </p>
+      <section class="text-center mb-5 container">
+        <h2 class="fw-bold mb-4 text-dark display-6">
+          ¿Qué hace especial a <span class="text-primary">Habit Tracker</span>?
+        </h2>
+        <p class="text-muted mb-5">
+          Diseñamos esta herramienta pensando en tu progreso. Cada detalle busca
+          ayudarte a formar hábitos duraderos y mantener la motivación día a
+          día.
+        </p>
 
-  <div class="row g-4 justify-content-center">
-    <!-- Seguimiento diario -->
-    <div class="col-md-4">
-      <div class="card h-100 border-0 bg-white shadow-lg p-4 rounded-4 hover-card">
-        <img
-          src="../static/images/seguimiento.svg"
-          alt="Seguimiento diario"
-          class="img-fluid w-50 mx-auto mb-3"
-        />
-        <div class="fs-1 text-primary mb-2">
-          <i class="bi bi-calendar-check"></i>
+        <div class="row g-4 justify-content-center">
+          <!-- Seguimiento diario -->
+          <div class="col-md-4">
+            <div
+              class="card h-100 border-0 bg-white shadow-lg p-4 rounded-4 hover-card"
+            >
+              <img
+                src="../static/images/dailyCalender.svg"
+                alt="Seguimiento diario"
+                id="svgAboutCarts"
+                class="img-fluid w-50 mx-auto mb-3"
+              />
+              <div class="fs-1 text-primary mb-2">
+                <i class="bi bi-calendar-check"></i>
+              </div>
+              <h4 class="fw-semibold mb-3">Seguimiento diario</h4>
+              <p>
+                Registra tus hábitos con un solo clic y observá tu constancia
+                día tras día. Cada acción queda guardada en tu historial para
+                que veas tu crecimiento real.
+              </p>
+              <p class="text-muted small">
+                Controlá tus rachas y no pierdas el
+                impulso.
+              </p>
+            </div>
+          </div>
+
+          <!-- Estadísticas claras -->
+          <div class="col-md-4">
+            <div
+              class="card h-100 border-0 bg-white shadow-lg p-4 rounded-4 hover-card"
+            >
+              <img
+                src="../static/images/metricsAbout.svg"
+                alt="Estadísticas claras"
+                id="svgAboutCarts"
+                class="img-fluid w-50 mx-auto mb-3"
+              />
+              <div class="fs-1 text-success mb-2">
+                <i class="bi bi-bar-chart-line"></i>
+              </div>
+              <h4 class="fw-semibold mb-3">Estadísticas claras</h4>
+              <p>
+                Tus logros se transforman en gráficos interactivos y métricas
+                fáciles de entender. Visualizá tu progreso y descubrí cuáles
+                hábitos te funcionan mejor.
+              </p>
+              <p class="text-muted small">
+                Rachas activas, porcentajes de cumplimiento y análisis de
+                progreso.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tecnología moderna -->
+          <div class="col-md-4">
+            <div
+              class="card h-100 border-0 bg-white shadow-lg p-4 rounded-4 hover-card"
+            >
+              <img
+                src="../static/images/codeMonitor.svg"
+                alt="Tecnología moderna"
+                id="svgAboutCarts"
+                class="img-fluid w-50 mx-auto mb-3"
+              />
+              <div class="fs-1 text-warning mb-2">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h4 class="fw-semibold mb-3">
+                Desarrollado con tecnología moderna
+              </h4>
+              <p>
+                Construido con <strong>Flask</strong>,
+                <strong>Bootstrap</strong> y <strong>SQL</strong>, garantizando
+                rapidez, accesibilidad y seguridad en cada sesión.
+              </p>
+              <p class="text-muted small">
+                Arquitectura escalable y diseño responsivo para todos los
+                dispositivos.
+              </p>
+            </div>
+          </div>
         </div>
-        <h4 class="fw-semibold mb-3">Seguimiento diario</h4>
-        <p>
-          Registra tus hábitos con un solo clic y observá tu constancia día tras
-          día. Cada acción queda guardada en tu historial para que veas tu
-          crecimiento real.
-        </p>
-        <p class="text-muted small">
-          ✅ Recibí recordatorios, controlá tus rachas y no pierdas el impulso.
-        </p>
-      </div>
-    </div>
-
-    <!-- Estadísticas claras -->
-    <div class="col-md-4">
-      <div class="card h-100 border-0 bg-white shadow-lg p-4 rounded-4 hover-card">
-        <img
-          src="../static/images/estadisticas.svg"
-          alt="Estadísticas claras"
-          class="img-fluid w-50 mx-auto mb-3"
-        />
-        <div class="fs-1 text-success mb-2">
-          <i class="bi bi-bar-chart-line"></i>
-        </div>
-        <h4 class="fw-semibold mb-3">Estadísticas claras</h4>
-        <p>
-          Tus logros se transforman en gráficos interactivos y métricas fáciles
-          de entender. Visualizá tu progreso y descubrí cuáles hábitos te
-          funcionan mejor.
-        </p>
-        <p class="text-muted small">
-          📊 Rachas activas, porcentajes de cumplimiento y análisis de progreso.
-        </p>
-      </div>
-    </div>
-
-    <!-- Tecnología moderna -->
-    <div class="col-md-4">
-      <div class="card h-100 border-0 bg-white shadow-lg p-4 rounded-4 hover-card">
-        <img
-          src="../static/images/tecnologia.svg"
-          alt="Tecnología moderna"
-          class="img-fluid w-50 mx-auto mb-3"
-        />
-        <div class="fs-1 text-warning mb-2">
-          <i class="bi bi-code-slash"></i>
-        </div>
-        <h4 class="fw-semibold mb-3">Desarrollado con tecnología moderna</h4>
-        <p>
-          Construido con <strong>Flask</strong>, <strong>Bootstrap</strong> y
-          <strong>SQL</strong>, garantizando rapidez, accesibilidad y seguridad
-          en cada sesión.
-        </p>
-        <p class="text-muted small">
-          ⚙️ Arquitectura escalable y diseño responsivo para todos los
-          dispositivos.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
     </main>
 
     <!-- Footer -->

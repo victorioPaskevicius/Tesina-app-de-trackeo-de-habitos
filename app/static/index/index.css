@@ -16,3 +16,33 @@
 .beneficios {
   width: 50dvw;
 }
+
+.svg_logos_estudios {
+  height: 50px;
+}
+
+
+@media (max-width: 576px) {
+  #funciona {
+    max-width: 100% !important;
+  }
+}
+
+
+.bg-secondary.bg-opacity-25 {
+  transition: all 0.3s ease;
+}
+.bg-secondary.bg-opacity-25:hover {
+  transform: translateY(-5px);
+  background-color: rgba(108, 117, 125, 0.35);
+}
+
+.svg_logos_estudios {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.svg_logos_estudios:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 255, 100, 0.4));
+}
+

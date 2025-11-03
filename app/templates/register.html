@@ -8,62 +8,115 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ url_for( 'static', filename='index.css' ) }}" />
-    <link rel="stylesheet" href="{{ url_for( 'static', filename='register/register.css' ) }}" />
+        <link rel="stylesheet" href="{{ url_for( 'static', filename='formStyle/formsStyle.css' ) }}" />
   </head>
 
   <body>
-    <form class="form_register border p-5" id="registerForm">
-      <h1 class="mb-5">Register Page</h1>
+        <section
+      class="register-section d-flex justify-content-center align-items-center"
+    >
+      <form
+        id="registerForm"
+        class="register-card px-5 py-2 rounded-4 shadow-lg"
+      >
+        <!-- Logo y encabezado -->
+        <div class="text-center mb-2">
+          <img
+            src="../static/images/calenderLogo.svg"
+            alt="Habit Tracker Logo"
+            class="register-logo mb-3"
+          />
+          <h1 class="fw-bold text-success">Habit Tracker</h1>
+          <p class="text-muted">
+            Crea tu cuenta para comenzar a mejorar tus hábitos
+          </p>
+        </div>
 
-      <div class="input_username mb-3">
-        <label class="form-label text-dark fs-5" for="inputName">Nombre de usuario</label>
-        <input
-          class="form-control"
-          id="inputName"
-          type="text"
-          placeholder="Nombre"
-          required
-        />
-      </div>
-      <div class="input_mail mb-3">
-        <label class="form-label text-dark fs-5" for="inputMail">Email</label>
-        <input
-          class="form-control"
-          id="inputMail"
-          type="email"
-          placeholder="Email"
-          required
-        />
-      </div>
-      <div class="input_password mb-3">
-        <label class="form-label text-dark fs-5" for="inputPass">Contraseña</label>
-        <input
-          class="form-control mb-3"
-          id="inputPass"
-          type="password"
-          placeholder="Contraseña"
-          required
-        />
-        <label class="form-label text-dark fs-5" for="inputRePass"
-          >Verifica la contraseña</label
-        >
-        <input
-          class="form-control"
-          id="inputRePass"
-          type="password"
-          placeholder="Verifica la contraseña"
-          required
-        />
-      </div>
-      <div class="error_container text-danger" id="errorContainer"></div>
+        <!-- Nombre de usuario -->
+        <div class="mb-4">
+          <label class="form-label fw-semibold text-dark" for="inputName">
+            Nombre de usuario
+          </label>
+          <input
+            class="form-control form-control-lg rounded-3"
+            id="inputName"
+            type="text"
+            name="username"
+            placeholder="Ingresa tu nombre de usuario"
+            required
+          />
+        </div>
 
-      <input
-        class="btn btn-success container"
-        id="btnSubmit"
-        type="submit"
-        value="Registrarse"
-      />
-    </form>
+        <!-- Email -->
+        <div class="mb-4">
+          <label class="form-label fw-semibold text-dark" for="inputMail">
+            Email
+          </label>
+          <input
+            class="form-control form-control-lg rounded-3"
+            id="inputMail"
+            type="email"
+            name="email"
+            placeholder="Ingresa tu correo electrónico"
+            required
+          />
+        </div>
+
+        <!-- Contraseña -->
+        <div class="mb-4">
+          <label class="form-label fw-semibold text-dark" for="inputPass">
+            Contraseña
+          </label>
+          <input
+            class="form-control form-control-lg rounded-3"
+            id="inputPass"
+            type="password"
+            name="password"
+            placeholder="Crea una contraseña"
+            required
+          />
+        </div>
+
+        <!-- Verificar contraseña -->
+        <div class="mb-4">
+          <label class="form-label fw-semibold text-dark" for="inputRePass">
+            Verifica tu contraseña
+          </label>
+          <input
+            class="form-control form-control-lg rounded-3"
+            id="inputRePass"
+            type="password"
+            name="repassword"
+            placeholder="Repite tu contraseña"
+            required
+          />
+        </div>
+
+        <!-- Botón de registro -->
+        <div class="d-grid mb-3">
+          <button type="submit" class="btn btn-success btn-lg rounded-3">
+            Registrarse
+          </button>
+        </div>
+
+        <!-- Error -->
+        <div
+          class="error_container text-danger text-center small"
+          id="errorContainer"
+        ></div>
+
+        <!-- Link de login -->
+        <div class="text-center mt-4">
+          <p class="text-muted mb-0">¿Ya tienes una cuenta?</p>
+          <a
+            href="/login"
+            class="text-success bg-dark bg-opacity-75 py-1 px-2 rounded-4 fw-bold text-decoration-none"
+          >
+            Inicia sesión aquí
+          </a>
+        </div>
+      </form>
+    </section>
 
     <script src="../static/index.js"></script>
     <script src="../static/register/register.js"></script>

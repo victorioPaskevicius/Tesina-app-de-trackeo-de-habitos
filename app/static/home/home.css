@@ -1,4 +1,18 @@
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .header_img {
   height: 65px;
   border-radius: 50%;
+}
+
+#article_1 {
+  margin-top: 5rem;
+}
+
+#svgHome {
+  height: 50px;
 }

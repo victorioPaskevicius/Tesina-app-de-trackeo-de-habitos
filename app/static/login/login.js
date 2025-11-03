@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
       messages.forEach((message) => {
         const textError = document.createElement("p");
         textError.textContent = message;
-        textError.classList.add("error","fs-5")
-        errorContainer.appendChild(textError)
+        textError.classList.add("error", "fs-5");
+        errorContainer.appendChild(textError);
       });
     } else {
       fetch("/login", {
@@ -46,7 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
           if (data.message) {
             window.location.href = `user/${data.user_id}`;
           } else {
-            alert("Error: " + data.error);
+            errorContainer.innerHTML = "";
+
+            const textError = document.createElement("p");
+            textError.textContent = data.error;
+            textError.classList.add("error", "fs-5");
+            errorContainer.appendChild(textError);
+            // alert("Error: " + data.error);
           }
         })
         .catch((err) => console.error(err));
