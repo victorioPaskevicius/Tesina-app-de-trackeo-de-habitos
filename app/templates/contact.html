@@ -65,10 +65,13 @@
     </header>
 
     <!-- Contenido principal -->
-    <main id="container-contact" class="container my-5 rounded p-5 shadow-lg">
-      <div
-        class="row justify-content-center align-items-center p-4"
-      >
+    <form
+      action="https://formsubmit.co/vpaskevicius@escuelasproa.edu.ar"
+      method="POST"
+      id="container-contact"
+      class="container my-5 rounded p-5 shadow-lg"
+    >
+      <div class="row justify-content-center align-items-center p-4">
         <!-- Columna izquierda con SVG -->
         <div class="col-md-5 d-none d-md-block text-center">
           <svg
@@ -100,7 +103,7 @@
                 type="text"
                 class="form-control shadow-sm bg-success bg-opacity-10"
                 id="name"
-                name="name"
+                name="nombre"
                 required
               />
             </div>
@@ -142,6 +145,10 @@
               ></textarea>
             </div>
 
+            <div>
+              <input type="hidden" name="_captcha" value="false" />
+            </div>
+
             <div class="text-center">
               <button
                 type="submit"
@@ -153,7 +160,7 @@
           </form>
         </div>
       </div>
-    </main>
+    </form>
 
     <!-- Footer -->
     <footer class="container-fluid bg-dark text-light py-4 mt-5">
